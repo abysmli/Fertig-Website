@@ -1,2 +1,0 @@
-# fertig-frontend-react
-
