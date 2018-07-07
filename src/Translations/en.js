@@ -1,5 +1,5 @@
 export default {
     'common': {
-        'navigation_product': 'Produkt'
+        'navigation_product': 'Product'
     }
 };
