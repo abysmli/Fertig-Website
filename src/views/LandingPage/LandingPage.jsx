@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+import {compose} from 'recompose';
+import {withRouter} from 'react-router-dom';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -32,7 +36,7 @@ class LandingPage extends React.Component {
         <Header
           color="transparent"
           routes={dashboardRoutes}
-          brand="Material Kit React"
+          brand="Fertig"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -79,4 +83,17 @@ class LandingPage extends React.Component {
   }
 }
 
-export default withStyles(landingPageStyle)(LandingPage);
+const mapStateToProps = (state, props) => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+
+});
+
+export default compose(
+    withRouter,
+    connect(mapStateToProps, mapDispatchToProps),
+    translate('common'),
+    withStyles(landingPageStyle)
+)(LandingPage);
