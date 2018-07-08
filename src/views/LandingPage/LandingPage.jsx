@@ -16,7 +16,8 @@ import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import HeaderRightLinks from "components/Header/HeaderRightLinks.jsx";
+import HeaderMiddleLinks from "components/Header/HeaderMiddleLinks.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
@@ -26,6 +27,9 @@ import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
 
+
+// Assets
+import BrandImg from 'assets/img/brand.png';
 const dashboardRoutes = [];
 
 class LandingPage extends React.Component {
@@ -36,8 +40,9 @@ class LandingPage extends React.Component {
         <Header
           color="transparent"
           routes={dashboardRoutes}
-          brand="Fertig"
-          rightLinks={<HeaderLinks />}
+          brand={<img src={BrandImg} style={{height: 50, width: 'auto'}}/>}
+          middleLinks={<HeaderMiddleLinks />}
+          rightLinks={<HeaderRightLinks />}
           fixed
           changeColorOnScroll={{
             height: 400,
@@ -45,7 +50,7 @@ class LandingPage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+        <Parallax filter image={require("assets/img/landing-bg.jpg")} id='jumbotron'>
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>

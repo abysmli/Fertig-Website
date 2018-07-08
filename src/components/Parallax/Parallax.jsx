@@ -42,7 +42,8 @@ class Parallax extends React.Component {
       children,
       style,
       image,
-      small
+      small,
+      id
     } = this.props;
     const parallaxClasses = classNames({
       [classes.parallax]: true,
@@ -59,6 +60,7 @@ class Parallax extends React.Component {
           ...this.state
         }}
         ref="parallax"
+        id={id}
       >
         {children}
       </div>
