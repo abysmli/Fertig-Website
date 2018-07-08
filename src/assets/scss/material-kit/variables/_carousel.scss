@@ -1,0 +1,10 @@
+.carousel{
+  &.carousel-full-nagivation{
+    .left{
+      cursor: default !important;
+    }
+    .right{
+      cursor: default !important;
+    }
+  }
+}
