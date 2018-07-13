@@ -57,7 +57,6 @@ class HeaderMiddleLinks extends React.Component {
                 </ListItem>
                 <ListItem className={classes.listItem}>
                     <Button
-                        href="https://www.creative-tim.com/product/material-kit-react"
                         color="transparent"
                         className={classes.navLink}
                     >
