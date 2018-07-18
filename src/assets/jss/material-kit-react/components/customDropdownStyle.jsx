@@ -1,17 +1,17 @@
 import {
-  defaultFont,
-  primaryColor,
-  primaryBoxShadow,
-  infoColor,
-  infoBoxShadow,
-  successColor,
-  successBoxShadow,
-  warningColor,
-  warningBoxShadow,
-  dangerColor,
-  dangerBoxShadow,
-  roseColor,
-  roseBoxShadow,
+    dangerBoxShadow,
+    dangerColor,
+    defaultFont,
+    infoBoxShadow,
+    infoColor,
+    primaryBoxShadow,
+    primaryColor,
+    roseBoxShadow,
+    roseColor,
+    successBoxShadow,
+    successColor,
+    warningBoxShadow,
+    warningColor,
 } from "assets/jss/material-kit-react.jsx";
 
 const customDropdownStyle = theme => ({
@@ -36,7 +36,7 @@ const customDropdownStyle = theme => ({
   menuList: {
     padding: "0"
   },
-  pooperResponsive: {
+    popperResponsive: {
     zIndex: "1200",
     [theme.breakpoints.down("sm")]: {
       zIndex: "1640",

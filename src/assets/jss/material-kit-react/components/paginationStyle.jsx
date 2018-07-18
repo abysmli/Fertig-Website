@@ -1,10 +1,10 @@
 import {
-  grayColor,
-  primaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor
+    dangerColor,
+    grayColor,
+    infoColor,
+    primaryColor,
+    successColor,
+    warningColor
 } from "assets/jss/material-kit-react.jsx";
 
 const paginationStyle = {
@@ -56,7 +56,7 @@ const paginationStyle = {
       borderColor: primaryColor,
       color: "#FFFFFF",
       boxShadow:
-        "0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2)"
+          "0 4px 5px 0 rgba(33, 62, 91, 0.14), 0 1px 10px 0 rgba(33, 62, 91, 0.12), 0 2px 4px -1px rgba(33, 62, 91, 0.2)"
     },
     "&:hover,&:focus": {
       zIndex: "2",

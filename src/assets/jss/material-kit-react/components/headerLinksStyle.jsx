@@ -1,4 +1,4 @@
-import { defaultFont } from "assets/jss/material-kit-react.jsx";
+import {defaultFont, primaryColor} from "assets/jss/material-kit-react.jsx";
 
 import tooltip from "assets/jss/material-kit-react/tooltipsStyle.jsx";
 
@@ -11,7 +11,7 @@ const headerLinksStyle = theme => ({
     listStyle: "none",
     paddingTop: "0",
     paddingBottom: "0",
-    color: "inherit"
+      color: primaryColor
   },
   listItem: {
     float: "left",

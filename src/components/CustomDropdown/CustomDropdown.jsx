@@ -3,8 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
-import { Manager, Target, Popper } from "react-popper";
-
+import {Manager, Popper, Target} from "react-popper";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -13,7 +12,6 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Paper from "@material-ui/core/Paper";
 import Grow from "@material-ui/core/Grow";
 import Divider from "@material-ui/core/Divider";
-
 // core components
 import Button from "components/CustomButtons/Button.jsx";
 
@@ -87,7 +85,7 @@ class CustomDropdown extends React.Component {
           eventsEnabled={open}
           className={classNames({
             [classes.popperClose]: !open,
-            [classes.pooperResponsive]: true
+              [classes.popperResponsive]: true
           })}
         >
           <ClickAwayListener onClickAway={this.handleClose}>

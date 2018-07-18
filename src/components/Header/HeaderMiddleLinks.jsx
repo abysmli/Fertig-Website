@@ -1,14 +1,11 @@
 /*eslint-disable*/
 import React from "react";
-import i18n from 'i18next';
-import { translate } from 'react-i18next';
+import {translate} from 'react-i18next';
 // react components for routing our app without refresh
-import {Link} from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui/icons
 import {Apps, QuestionAnswer} from "@material-ui/icons";
 // core components

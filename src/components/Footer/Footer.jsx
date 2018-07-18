@@ -4,8 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-import { List, ListItem, withStyles } from "@material-ui/core";
-
+import {List, ListItem, withStyles} from "@material-ui/core";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 
@@ -28,9 +27,9 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="#"
-                className={classes.block}
-                target="_blank"
+                  href="#"
+                  className={classes.block}
+                  target="_blank"
               >
                 Creative Tim
               </a>
