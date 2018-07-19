@@ -1,5 +1,13 @@
 export default {
-    'common': {
+    common: {
+        header: {
+            tab: "洗碗块",
+            powder: "洗碗粉",
+            salt: "洗碗盐",
+            liquid: "洗洁精",
+            others: "其他清洁产品",
+            faq: "常见问题",
+        },
         'navigation_product': '产品线',
         'navigation_tabs': '洗碗块',
         'navigation_powder': '洗碗粉',

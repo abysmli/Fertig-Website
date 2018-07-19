@@ -9,7 +9,6 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
-
 import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle";
 
 import image1 from "assets/img/carousel/1.jpg";
@@ -24,7 +23,7 @@ class SectionCarousel extends React.Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true
+            autoplay: false
         };
 
         const {classes} = this.props;
@@ -36,12 +35,17 @@ class SectionCarousel extends React.Component {
                             <div>
                                 <div className={classes.carouselBackgroundImg}
                                      style={{backgroundImage: `url(${image1})`}}/>
-                                <div className="slick-caption">
-                                    <h4>
-                                        <LocationOn className="slick-icons"/>Yellowstone
-                                        National Park, United States
-                                    </h4>
-                                </div>
+                                <GridContainer className="fertig-slick-caption">
+                                    <GridItem xs={12} sm={12} md={12} className="fertig-slick-caption-item">
+                                        <h1 className="fertig-caption-title">来自德国的专业清洁品牌</h1>
+                                        <br/>
+                                        <h5 className="fertig-caption-subtitle">高效清洁 环保健康</h5>
+                                        <br/>
+                                        <a className="fertig-caption-button">
+                                            了解更多>
+                                        </a>
+                                    </GridItem>
+                                </GridContainer>
                             </div>
                             <div>
                                 <div className={classes.carouselBackgroundImg}

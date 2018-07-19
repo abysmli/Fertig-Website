@@ -88,7 +88,7 @@ class Header extends React.Component {
             <AppBar className={appBarClasses}>
                 <Toolbar className={classes.container}>
                     {leftLinks !== undefined ? brandComponent : null}
-                    <div className={classes.flex}>
+                    <div>
                         {leftLinks !== undefined ? (
                             <Hidden smDown implementation="css">
                                 {leftLinks}
@@ -97,7 +97,7 @@ class Header extends React.Component {
                             brandComponent
                         )}
                     </div>
-                    <Hidden smDown implementation="css" className={classes.flex}>
+                    <Hidden smDown implementation="css">
                         {middleLinks}
                     </Hidden>
                     <Hidden smDown implementation="css">

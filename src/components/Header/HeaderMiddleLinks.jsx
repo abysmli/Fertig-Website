@@ -7,7 +7,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 // @material-ui/icons
-import {Apps, QuestionAnswer} from "@material-ui/icons";
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
@@ -31,12 +30,80 @@ class HeaderMiddleLinks extends React.Component {
                 <ListItem className={classes.listItem}>
                     <CustomDropdown
                         noLiPadding
-                        buttonText={t('navigation_product')}
+                        buttonText={t('header.tab')}
                         buttonProps={{
                             className: classes.navLink,
                             color: "transparent"
                         }}
-                        buttonIcon={Apps}
+                        dropdownList={[
+                            <a href="#tabs"
+                               className={classes.dropdownLink}
+                            >
+                                {t('navigation_tabs')}
+                            </a>,
+                            <a
+                                href="#powder"
+                                className={classes.dropdownLink}
+                            >
+                                {t('navigation_powder')}
+                            </a>
+                        ]}
+                    />
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                        noLiPadding
+                        buttonText={t('header.powder')}
+                        buttonProps={{
+                            className: classes.navLink,
+                            color: "transparent"
+                        }}
+                        dropdownList={[
+                            <a href="#tabs"
+                               className={classes.dropdownLink}
+                            >
+                                {t('navigation_tabs')}
+                            </a>,
+                            <a
+                                href="#powder"
+                                className={classes.dropdownLink}
+                            >
+                                {t('navigation_powder')}
+                            </a>
+                        ]}
+                    />
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                        noLiPadding
+                        buttonText={t('header.salt')}
+                        buttonProps={{
+                            className: classes.navLink,
+                            color: "transparent"
+                        }}
+                        dropdownList={[
+                            <a href="#tabs"
+                               className={classes.dropdownLink}
+                            >
+                                {t('navigation_tabs')}
+                            </a>,
+                            <a
+                                href="#powder"
+                                className={classes.dropdownLink}
+                            >
+                                {t('navigation_powder')}
+                            </a>
+                        ]}
+                    />
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                        noLiPadding
+                        buttonText={t('header.liquid')}
+                        buttonProps={{
+                            className: classes.navLink,
+                            color: "transparent"
+                        }}
                         dropdownList={[
                             <a href="#tabs"
                                className={classes.dropdownLink}
@@ -56,8 +123,14 @@ class HeaderMiddleLinks extends React.Component {
                     <Button
                         color="transparent"
                         className={classes.navLink}
-                    >
-                        <QuestionAnswer className={classes.icons}/> {t('navigation_faq')}
+                    >{t('header.others')}
+                    </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                    <Button
+                        color="transparent"
+                        className={classes.navLink}
+                    >{t('header.faq')}
                     </Button>
                 </ListItem>
             </List>

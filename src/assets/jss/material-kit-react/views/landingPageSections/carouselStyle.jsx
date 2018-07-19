@@ -6,7 +6,7 @@ const carouselStyle = {
     },
     carouselBackgroundImg: {
         height: "100vh",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom right",
         backgroundSize: "cover",
         margin: 0,
         padding: 0,
@@ -23,6 +23,18 @@ const carouselStyle = {
             top: "0",
             content: '""'
         },
+    },
+    carouselCaption: {
+        display: "inline-block",
+        position: "relative",
+        marginTop: "30px",
+        minHeight: "32px",
+        color: "#3399cc",
+        textDecoration: "none",
+        background: "-webkit-linear-gradient(0,#09bdf8, #156eb2)",
+        backgroundClip: "text",
+        webkitTextFillColor: "transparent"
+
     }
 };
 

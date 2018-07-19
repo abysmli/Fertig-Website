@@ -1,19 +1,10 @@
-import {container, title} from "assets/jss/material-kit-react.jsx";
+import {container} from "assets/jss/material-kit-react.jsx";
 
 const landingPageStyle = {
   container: {
     zIndex: "12",
     color: "#FFFFFF",
     ...container
-  },
-  title: {
-    ...title,
-    display: "inline-block",
-    position: "relative",
-    marginTop: "30px",
-    minHeight: "32px",
-    color: "#FFFFFF",
-    textDecoration: "none"
   },
   subtitle: {
     fontSize: "1.313rem",

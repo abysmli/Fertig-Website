@@ -1,0 +1,42 @@
+.fertig-slick-caption {
+  padding-bottom: 45px;
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  color: #ffffff;
+  text-align: left;
+  display: none;
+  @media screen and (max-width: 1200px) {
+    top: 10%;
+    text-align: center;
+  }
+
+  .fertig-caption-title {
+    display: inline-block;
+    position: relative;
+    margin-top: 30px;
+    min-height: 32px;
+    color: #3399cc;
+    text-decoration: none;
+    background: -webkit-linear-gradient(0, #09bdf8, #156eb2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+  }
+  .fertig-caption-subtitle {
+    display: inline-block;
+    background: -webkit-linear-gradient(0, #09bdf8, #156eb2);
+    width: auto;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 2px 1rem;
+  }
+  .fertig-caption-button {
+    color: $primary !important;
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+  }
+}

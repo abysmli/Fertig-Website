@@ -1,5 +1,13 @@
 export default {
-    'common': {
+    common: {
+        header: {
+            tab: "Geschirrspültabs",
+            powder: "Geschirrspülpulver",
+            salt: "Salz",
+            liquid: "Geschirrspülmittel",
+            others: "Mehr",
+            faq: "FAQ",
+        },
         'navigation_product': 'Produkte',
         'navigation_tabs': 'Geschirrspültabs',
         'navigation_powder': 'Geschirrspülpulver',
