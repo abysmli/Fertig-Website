@@ -3,17 +3,20 @@ import React from "react";
 import Carousel from "react-slick";
 import withStyles from "@material-ui/core/styles/withStyles";
 // material-ui components
+import Hidden from '@material-ui/core/Hidden';
 // @material-ui/icons
 import LocationOn from "@material-ui/icons/LocationOn";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
-import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle";
+import GradientColorText from "components/GradientColorText";
+import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle"
 
 import image1 from "assets/img/carousel/1.jpg";
 import image2 from "assets/img/carousel/2.jpg";
 import image3 from "assets/img/carousel/3.jpg";
+import carouselFirst from "assets/img/carousel/carousel-first.png";
 
 class SectionCarousel extends React.Component {
     render() {
@@ -35,15 +38,27 @@ class SectionCarousel extends React.Component {
                             <div>
                                 <div className={classes.carouselBackgroundImg}
                                      style={{backgroundImage: `url(${image1})`}}/>
-                                <GridContainer className="fertig-slick-caption">
-                                    <GridItem xs={12} sm={12} md={12} className="fertig-slick-caption-item">
-                                        <h1 className="fertig-caption-title">来自德国的专业清洁品牌</h1>
+                                <GridContainer className="fertig-slick-caption" alignItems={"center"}>
+                                    <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
+                                        <Hidden mdDown>
+                                            <GradientColorText fontType='h1'
+                                                               textContent='来自德国的专业清洁品牌'/>
+                                        </Hidden>
+                                        <Hidden lgUp>
+                                            <GradientColorText fontType='h3'
+                                                               textContent='来自德国的专业清洁品牌'/>
+                                        </Hidden>
                                         <br/>
-                                        <h5 className="fertig-caption-subtitle">高效清洁 环保健康</h5>
+                                        <GradientColorText fontType='h5'
+                                                           textContent='高效清洁 环保健康'
+                                                           invert/>
                                         <br/>
                                         <a className="fertig-caption-button">
                                             了解更多>
                                         </a>
+                                    </GridItem>
+                                    <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
+                                        <img src={carouselFirst} alt="products" className="fertig-caption-img"/>
                                     </GridItem>
                                 </GridContainer>
                             </div>

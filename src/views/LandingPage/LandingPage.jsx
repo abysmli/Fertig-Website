@@ -41,7 +41,7 @@ class LandingPage extends React.Component {
                     rightLinks={<HeaderRightLinks/>}
                     fixed
                     changeColorOnScroll={{
-                        height: 400,
+                        height: 50,
                         color: "white"
                     }}
                     {...rest}

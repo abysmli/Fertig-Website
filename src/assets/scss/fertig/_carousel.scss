@@ -1,17 +1,23 @@
 .fertig-slick-caption {
-  padding-bottom: 45px;
   position: absolute;
   right: 15%;
-  top: 50%;
   left: 15%;
+  bottom: 5%;
   z-index: 10;
   padding-top: 20px;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   display: none;
-  @media screen and (max-width: 1200px) {
-    top: 10%;
-    text-align: center;
+  height: 95%;
+  .fertig-slick-caption-item {
+    margin-top: 5rem;
+    @media screen and (min-width: 1200px) {
+      margin-top: 15rem;
+    }
+  }
+  .fertig-caption-img {
+    max-height: 100%;
+    max-width: 100%;
   }
 
   .fertig-caption-title {

@@ -1,0 +1,21 @@
+.gradient-color-text {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  min-height: 32px;
+  color: #3399cc;
+  text-decoration: none;
+  background: -webkit-linear-gradient(0, $primary-gradient-light, $primary-gradient-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+.gradient-color-box {
+  display: inline-block;
+  background: -webkit-linear-gradient(0, $primary-gradient-light, $primary-gradient-dark);
+  width: auto;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 2px 1rem;
+}
