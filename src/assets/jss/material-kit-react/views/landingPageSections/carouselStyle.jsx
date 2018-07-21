@@ -3,6 +3,7 @@ const carouselStyle = {
         marginTop: 0,
         minHeight: "100vh",
         maxHeight: "100vh",
+        marginBottom: 0,
     },
     carouselBackgroundImg: {
         height: "100vh",

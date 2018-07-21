@@ -4,7 +4,6 @@ import {translate} from 'react-i18next';
 import {compose} from 'recompose';
 import {withRouter} from 'react-router-dom';
 // nodejs library that concatenates classes
-import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -13,14 +12,11 @@ import Footer from "components/Footer/Footer.jsx";
 
 import HeaderRightLinks from "components/Header/HeaderRightLinks.jsx";
 import HeaderMiddleLinks from "components/Header/HeaderMiddleLinks.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/ContactSection.jsx";
 import SectionCarousel from "./Sections/CarouselSections";
+import ProductSection from "Containers/ProductSection";
 // Assets
 import BrandImg from 'assets/img/brand.png';
 
@@ -47,16 +43,7 @@ class LandingPage extends React.Component {
                     {...rest}
                 />
                 <SectionCarousel/>
-                <Parallax filter image={require("assets/img/landing-bg.jpg")} id='jumbotron'>
-
-                </Parallax>
-                <div className={classNames(classes.main, classes.mainRaised)}>
-                    <div className={classes.container}>
-                        <ProductSection/>
-                        <TeamSection/>
-                        <WorkSection/>
-                    </div>
-                </div>
+                <ProductSection/>
                 <Footer/>
             </div>
         );
