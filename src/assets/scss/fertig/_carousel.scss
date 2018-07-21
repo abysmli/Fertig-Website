@@ -11,8 +11,14 @@
   height: 95%;
   .fertig-slick-caption-item {
     margin-top: 5rem;
+    &:last-child {
+      margin-top: 1rem;
+    }
     @media screen and (min-width: 1200px) {
       margin-top: 15rem;
+      &:last-child {
+        margin-top: 15rem;
+      }
     }
   }
   .fertig-caption-img {

@@ -15,8 +15,16 @@
     margin-top: 5rem;
 }
 
+.fertig-slick-caption .fertig-slick-caption-item:last-child {
+    margin-top: 1rem;
+}
+
 @media screen and (min-width: 1200px) {
     .fertig-slick-caption .fertig-slick-caption-item {
+        margin-top: 15rem;
+    }
+
+    .fertig-slick-caption .fertig-slick-caption-item:last-child {
         margin-top: 15rem;
     }
 }

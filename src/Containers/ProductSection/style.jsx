@@ -1,8 +1,7 @@
 const productSectionStyle = {
     card: {
         marginTop: 0,
-        minHeight: "100vh",
-        maxHeight: "100vh",
+        height: 'auto',
         marginBottom: 0,
         display: 'flex'
     },
