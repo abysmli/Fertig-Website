@@ -6,12 +6,28 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
 import GradientColorText from "components/GradientColorText";
 import ProductItem from "components/ProductItem";
+import ProductModal from "Containers/ProductModal";
+// assets
 import productSectionStyle from "./style";
-
 import classicTab from 'assets/img/products/classic-tabs.png';
 import premiumTab from 'assets/img/products/premium-tabs.png';
 
 class ProductSection extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isDetailsModalOpen: false
+        };
+
+        this.showDetailsModal = this.showDetailsModal.bind(this);
+    }
+
+    showDetailsModal() {
+        this.setState({
+            isDetailsModalOpen: !this.state.isDetailsModalOpen
+        })
+    }
 
     renderProductItems() {
         const productItems = [{
@@ -40,7 +56,8 @@ class ProductSection extends React.Component {
                              title={title}
                              titleLabel={titleLabel}
                              subtitle={subtitle}
-                             buttonText={buttonText}/>
+                             buttonText={buttonText}
+                             showDetails={this.showDetailsModal}/>
             )
         })
     }
@@ -70,6 +87,10 @@ class ProductSection extends React.Component {
                         </GridContainer>
                     </Card>
                 </GridItem>
+                {this.state.isDetailsModalOpen &&
+                <ProductModal open={this.state.isDetailsModalOpen}
+                              handleClose={this.showDetailsModal}/>
+                }
             </GridContainer>
         );
     }

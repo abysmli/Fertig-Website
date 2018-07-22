@@ -17,6 +17,7 @@ class ProductItem extends React.Component {
             titleLabel,
             subtitle,
             buttonText,
+            showDetails
         } = this.props;
 
         return (
@@ -34,7 +35,7 @@ class ProductItem extends React.Component {
                     <h3 className={classes.title}>{title}</h3>
                 </div>
                 <h5 className={classes.subtitle}>{subtitle}</h5>
-                <Button color="primary" className={classes.button}>
+                <Button color="primary" className={classes.button} onClick={showDetails}>
                     <span className={classes.buttonText}>{buttonText ? buttonText : '产品详情'}</span>
                 </Button>
             </GridItem>
@@ -50,7 +51,8 @@ ProductItem.propTypes = {
     img: PropTypes.string,
     subtitle: PropTypes.string,
     title: PropTypes.object,
-    titleLabel: PropTypes.string
+    titleLabel: PropTypes.string,
+    showDetails: PropTypes.func
 };
 
 ProductItem.defaultProps = {
