@@ -71,11 +71,17 @@ const productStyle = {
         justifyContent: 'space-around',
         fontWeight: 400,
         minHeight: '4rem',
+        marginRight: '-1px',
+        marginBottom: '-1px',
         '&:nth-child(odd)': {
             color: '#f8df50'
         },
         '&:nth-child(even)': {
             color: 'white'
+        },
+        '&:last-child': {
+            marginLeft: '-2px',
+            borderLeft: 'none'
         }
     }
 };

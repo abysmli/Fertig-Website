@@ -8,36 +8,36 @@
   color: #ffffff;
   text-align: center;
   display: none;
-  height: 95%;
+    height: 95%;
 }
 
 .fertig-slick-caption .fertig-slick-caption-item {
-  margin-top: 5rem;
+    margin-top: 5rem;
 }
 
 .fertig-slick-caption .fertig-slick-caption-item:last-child {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 @media screen and (min-width: 1200px) {
-  .fertig-slick-caption .fertig-slick-caption-item {
-    margin-top: 15rem;
-  }
+    .fertig-slick-caption .fertig-slick-caption-item {
+        margin-top: 15rem;
+    }
 
-  .fertig-slick-caption .fertig-slick-caption-item:last-child {
-    margin-top: 15rem;
-  }
+    .fertig-slick-caption .fertig-slick-caption-item:last-child {
+        margin-top: 15rem;
+    }
 }
 
 .fertig-slick-caption .fertig-caption-img {
     max-height: 100%;
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .fertig-slick-caption .fertig-caption-button {
     color: #3399cc !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .gradient-color-text {
@@ -51,7 +51,7 @@
   background: -webkit-linear-gradient(0, #09bdf8, #156eb2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .gradient-color-box {
@@ -60,5 +60,5 @@
   width: auto;
   border-radius: 10px;
   font-weight: 500;
-  padding: 2px 1rem;
+    padding: 2px 1rem;
 }
