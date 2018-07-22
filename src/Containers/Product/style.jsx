@@ -4,7 +4,7 @@ const productStyle = {
     container: {
         padding: 0,
         margin: 0,
-        width: '900px',
+        maxWidth: '900px',
     },
     item: {
         padding: 0,
@@ -18,7 +18,7 @@ const productStyle = {
     itemWrapper: {
         display: 'flex',
         justifyContent: 'center',
-        padding: 0
+        padding: '16px'
     },
     contentWrapper: {
         margin: 'auto',
@@ -32,6 +32,7 @@ const productStyle = {
         display: 'inline-flex',
         fontWeight: 600,
         marginTop: '4rem',
+        textAlign: 'center'
     },
     divide: {
         marginTop: 0,
@@ -50,7 +51,7 @@ const productStyle = {
     featureWrapper: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start'
+        alignItems: 'center'
     },
     title: {
         fontWeight: 500,
@@ -61,7 +62,7 @@ const productStyle = {
         display: 'inline-flex'
     },
     table: {
-        width: '700px',
+        maxWidth: '700px',
         marginTop: '3rem'
     },
     tableCell: {

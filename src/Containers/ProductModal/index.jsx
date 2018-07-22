@@ -32,6 +32,9 @@ class ProductModal extends React.Component {
                     scroll={'paper'}
                     aria-labelledby="scroll-dialog-title"
                     maxWidth={"900px"}
+                    classes={{
+                        paper: classes.paper
+                    }}
                 >
                     <DialogContent className={classes.dialogContent}>
                         <DialogContentText>

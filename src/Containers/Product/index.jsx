@@ -26,7 +26,7 @@ const product = {
                 iconRef: icon2,
             },
             {
-                name: '无残留',
+                name: '没有残留',
                 iconRef: icon3
             }
         ],
