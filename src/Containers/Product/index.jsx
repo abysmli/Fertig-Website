@@ -12,6 +12,7 @@ import icon3 from 'assets/img/icons/3.png';
 import bgIntro from 'assets/img/productModal/bgIntro.png';
 import imgIntro from 'assets/img/productModal/imgIntro.png';
 import imgPara from 'assets/img/productModal/imgPara.png';
+import imgUsage from 'assets/img/productModal/imgUsage.png';
 
 const product = {
     introduction: {
@@ -52,7 +53,7 @@ const product = {
         ]
     },
     usage: {
-        img: '',
+        img: imgUsage,
         steps: [
             {
                 step: 1,
@@ -78,7 +79,7 @@ const product = {
     },
     attentions: {
         img: '',
-        attention: [{
+        contents: [{
             content: '银制、铝制品可能会褪色或变暗，铜制品不要跟银制品或者不锈钢制品放在一起洗，避免变色。将本品正确放置在专用槽内，用完以后注意密封，存储于干燥处。'
         }, {
             content: '放置于儿童无法触及的地方，若不慎入眼，请立马用水冲；如误食请立即送医就诊并出示商品包装。'
@@ -189,18 +190,104 @@ class Product extends React.Component {
         )
     }
 
+    renderSteps(steps) {
+        const {classes} = this.props;
+        return steps.map(step => {
+            return (
+                <div className={classes.stepWrapper}>
+                    <span className={classes.stepNumber}>{step.step}</span>
+                    <span className={classes.stepDescription}>{step.description}</span>
+                </div>
+            )
+        })
+    }
+
+    renderUsage(usage) {
+        const {classes} = this.props;
+
+        const {
+            img,
+            steps
+        } = usage;
+
+        return (
+            <GridItem xs={12} sm={12} md={12} className={classes.item}>
+                <GridContainer>
+                    <GridItem xs={12} className={classes.itemWrapper}>
+                        <GridContainer className={classes.contentWrapper}>
+                            <GridItem xs={12}>
+                                <h2 className={classes.title}>使用方法</h2>
+                            </GridItem>
+                        </GridContainer>
+                    </GridItem>
+                    <GridItem xs={12} className={classes.itemWrapper}>
+                        <GridContainer className={classes.usageContentWrapper}>
+                            <GridItem xs={12} sm={12} md={5} className={classes.usageContent}>
+                                {this.renderSteps(steps)}
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={7}>
+                                <img src={img} alt="img" className={classes.image}/>
+                            </GridItem>
+                        </GridContainer>
+                    </GridItem>
+                </GridContainer>
+            </GridItem>
+        )
+    }
+
+    renderAttentionContents(contents) {
+        const {classes} = this.props;
+
+        return contents.map(content => {
+            return (
+                <GridItem xs={12} className={classes.itemWrapper}>
+                    <div className={classes.contentWrapper}>
+                        {content.content}
+                    </div>
+                </GridItem>
+            )
+        })
+    }
+
+    renderAttentions(attentions) {
+        const {classes} = this.props;
+
+        const {
+            contents
+        } = attentions;
+
+        return (
+            <GridItem xs={12} sm={12} md={12} className={classes.item}>
+                <GridContainer>
+                    <GridItem xs={12} className={classes.itemWrapper}>
+                        <GridContainer className={classes.contentWrapper}>
+                            <GridItem xs={12}>
+                                <h2 className={classes.title}>注意事项</h2>
+                            </GridItem>
+                        </GridContainer>
+                    </GridItem>
+                    {this.renderAttentionContents(contents)}
+                </GridContainer>
+            </GridItem>
+        )
+    }
+
     render() {
         const {classes} = this.props;
 
         const {
             introduction,
-            parameters
+            parameters,
+            usage,
+            attentions
         } = product;
 
         return (
             <GridContainer className={classes.container}>
                 {this.renderIntroduction(introduction)}
                 {this.renderParameters(parameters)}
+                {this.renderUsage(usage)}
+                {this.renderAttentions(attentions)}
             </GridContainer>
         )
     }
