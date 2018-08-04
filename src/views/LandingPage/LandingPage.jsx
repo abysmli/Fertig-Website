@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types'
 import React from "react";
 import {connect} from 'react-redux';
 import {translate} from 'react-i18next';
 import {compose} from 'recompose';
 import {withRouter} from 'react-router-dom';
+import {RingLoader} from 'react-spinners';
 // nodejs library that concatenates classes
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -19,14 +21,42 @@ import SectionCarousel from "./Sections/CarouselSections";
 import ProductSection from "Containers/ProductSection";
 // Assets
 import BrandImg from 'assets/img/brand.png';
+// Actions
+import * as ProductsActions from 'Reducers/Products/Actions';
+
 
 // @material-ui/icons
 
 const dashboardRoutes = [];
 
 class LandingPage extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.props.fetchProductSection();
+    }
+
+    renderProductSections() {
+        const {
+            productSections,
+        } = this.props;
+
+        console.log(productSections);
+
+        return productSections.map(productSection => {
+            return (
+                <ProductSection productSection={productSection}/>
+            )
+        })
+    }
+
     render() {
-        const {classes, ...rest} = this.props;
+        const {
+            showProductSectionLoader,
+            ...rest
+        } = this.props;
+
         return (
             <div>
                 <Header
@@ -43,16 +73,30 @@ class LandingPage extends React.Component {
                     {...rest}
                 />
                 <SectionCarousel/>
-                <ProductSection/>
+                {showProductSectionLoader ?
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            color={'#123abc'}
+                            loading={showProductSectionLoader}
+                        />
+                    </div>
+                    :
+                    this.renderProductSections()
+                }
                 <Footer/>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state, props) => ({});
+const mapStateToProps = (state, props) => ({
+    showProductSectionLoader: state.Loaders.showProductSectionLoader,
+    productSections: state.Products.productSections
+});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    fetchProductSection: () => dispatch(ProductsActions.fetchProductSection())
+});
 
 export default compose(
     withRouter,
@@ -60,3 +104,12 @@ export default compose(
     translate('common'),
     withStyles(landingPageStyle)
 )(LandingPage);
+
+LandingPage.propTypes = {
+    fetchProductSection: PropTypes.func,
+    productSections: PropTypes.array
+};
+
+LandingPage.defaultProps = {
+    productSections: []
+};

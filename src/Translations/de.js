@@ -8,6 +8,12 @@ export default {
             others: "Mehr",
             faq: "FAQ",
         },
+        sections: {
+            title: {
+                tab: 'Geschirrspültabs',
+            },
+        },
+
         'navigation_product': 'Produkte',
         'navigation_tabs': 'Geschirrspültabs',
         'navigation_powder': 'Geschirrspülpulver',

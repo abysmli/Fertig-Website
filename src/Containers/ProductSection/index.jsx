@@ -1,5 +1,9 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Const from 'Core/Const';
+import {translate} from 'react-i18next';
+import {compose} from 'recompose';
+import _ from 'lodash';
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -9,8 +13,6 @@ import ProductItem from "components/ProductItem";
 import ProductModal from "Containers/ProductModal";
 // assets
 import productSectionStyle from "./style";
-import classicTab from 'assets/img/products/classic-tabs.png';
-import premiumTab from 'assets/img/products/premium-tabs.png';
 
 class ProductSection extends React.Component {
     constructor(props) {
@@ -29,48 +31,49 @@ class ProductSection extends React.Component {
         })
     }
 
-    renderProductItems() {
-        const productItems = [{
-            img: classicTab,
-            title: 'FERTIG洗碗块标准版',
-            titleLabel: null,
-            subtitle: '主要成分生物酶制剂、表面活性剂、柠檬酸钠，可强效分解油污及顽固食物残渣；易冲洗，无残留，可放心长期使用',
-            buttonText: '',
-        }, {
-            img: premiumTab,
-            title: 'FERTIG洗碗块高级版',
-            titleLabel: '多效合一',
-            subtitle: '在普通清洗基础上添加更多功能，针对茶渍、咖啡渍增加清洁能力，保护餐具，使其长期保持如新的光泽，满足更高品质的生活要求',
-            buttonText: '',
-        }];
-        return productItems.map(item => {
-            const {
-                img,
-                title,
-                titleLabel,
-                subtitle,
-                buttonText,
-            } = item;
+    renderProductItems(products) {
+        return products.map(item => {
+            const img = _.get(item, 'imgRef');
+            const uid = _.get(item, 'uid');
+            const name = _.get(item, 'name');
+            const label = _.get(item, 'label');
+            const description = _.get(item, 'description');
             return (
                 <ProductItem img={img}
-                             title={title}
-                             titleLabel={titleLabel}
-                             subtitle={subtitle}
-                             buttonText={buttonText}
+                             title={name}
+                             titleLabel={label}
+                             subtitle={description}
                              showDetails={this.showDetailsModal}/>
             )
         })
     }
 
     render() {
-        const {classes} = this.props;
+        const {
+            t,
+            classes,
+            productSection
+        } = this.props;
+
+        const series = _.get(productSection, 'series');
+        const products = _.get(productSection, 'products', []);
+
+        let sectionTitle = '';
+
+        switch (series) {
+            case Const.series.tab: {
+                sectionTitle = t('sections.title.tab')
+            }
+        }
+
         return (
             <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                     <Card className={classes.card}>
                         <GridContainer className={classes.contentWrapper}>
                             <GridItem xs={12} className={classes.itemWrapper}>
-                                <GradientColorText fontType='h2' textContent='洗碗块系列' customStyle={classes.caption}/>
+                                <GradientColorText fontType='h2' textContent={sectionTitle}
+                                                   customStyle={classes.caption}/>
                             </GridItem>
                             <GridItem xs={12} className={classes.itemWrapper}>
                                 <GradientColorText fontType='span' textContent=' ' customStyle={classes.divide}
@@ -81,7 +84,7 @@ class ProductSection extends React.Component {
                             </GridItem>
                             <GridItem xs={12}>
                                 <GridContainer>
-                                    {this.renderProductItems()}
+                                    {this.renderProductItems(products)}
                                 </GridContainer>
                             </GridItem>
                         </GridContainer>
@@ -96,4 +99,7 @@ class ProductSection extends React.Component {
     }
 }
 
-export default withStyles(productSectionStyle)(ProductSection);
+export default compose(
+    withStyles(productSectionStyle),
+    translate('common'),
+)(ProductSection);

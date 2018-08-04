@@ -97,36 +97,6 @@ class HeaderMiddleLinks extends React.Component {
                     />
                 </ListItem>
                 <ListItem className={classes.listItem}>
-                    <CustomDropdown
-                        noLiPadding
-                        buttonText={t('header.liquid')}
-                        buttonProps={{
-                            className: classes.navLink,
-                            color: "transparent"
-                        }}
-                        dropdownList={[
-                            <a href="#tabs"
-                               className={classes.dropdownLink}
-                            >
-                                {t('navigation_tabs')}
-                            </a>,
-                            <a
-                                href="#powder"
-                                className={classes.dropdownLink}
-                            >
-                                {t('navigation_powder')}
-                            </a>
-                        ]}
-                    />
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                    <Button
-                        color="transparent"
-                        className={classes.navLink}
-                    >{t('header.others')}
-                    </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
                     <Button
                         color="transparent"
                         className={classes.navLink}
