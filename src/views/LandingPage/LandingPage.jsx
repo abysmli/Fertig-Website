@@ -10,7 +10,7 @@ import {RingLoader} from 'react-spinners';
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
+import Footer from "components/FertigFooter/index";
 
 import HeaderRightLinks from "components/Header/HeaderRightLinks.jsx";
 import HeaderMiddleLinks from "components/Header/HeaderMiddleLinks.jsx";

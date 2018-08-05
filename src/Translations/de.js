@@ -11,6 +11,7 @@ export default {
         sections: {
             title: {
                 tab: 'Geschirrspültabs',
+                powder: 'Geschirrspülpulver'
             },
         },
 

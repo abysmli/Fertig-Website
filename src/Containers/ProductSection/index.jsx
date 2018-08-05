@@ -62,8 +62,15 @@ class ProductSection extends React.Component {
 
         switch (series) {
             case Const.series.tab: {
-                sectionTitle = t('sections.title.tab')
+                sectionTitle = t('sections.title.tab');
+                break;
             }
+
+            case Const.series.powder: {
+                sectionTitle = t('sections.title.powder');
+                break;
+            }
+
         }
 
         return (
@@ -78,9 +85,6 @@ class ProductSection extends React.Component {
                             <GridItem xs={12} className={classes.itemWrapper}>
                                 <GradientColorText fontType='span' textContent=' ' customStyle={classes.divide}
                                                    invert={true}/>
-                            </GridItem>
-                            <GridItem xs={12} className={classes.itemWrapper}>
-                                <h5 className={classes.subCaption}>DISHWASHING TABS</h5>
                             </GridItem>
                             <GridItem xs={12}>
                                 <GridContainer>
