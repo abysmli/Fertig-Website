@@ -9,11 +9,11 @@ import {RingLoader} from 'react-spinners';
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import Header from "components/Header/Header.jsx";
+import Header from "components/FertigHeader/Header.jsx";
 import Footer from "components/FertigFooter/index";
 
-import HeaderRightLinks from "components/Header/HeaderRightLinks.jsx";
-import HeaderMiddleLinks from "components/Header/HeaderMiddleLinks.jsx";
+import HeaderRightLinks from "components/FertigHeader/HeaderRightLinks.jsx";
+import HeaderMiddleLinks from "components/FertigHeader/HeaderMiddleLinks.jsx";
 
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 // Sections for this page

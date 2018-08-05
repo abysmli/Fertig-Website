@@ -1,5 +1,4 @@
 import React from "react";
-
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
@@ -14,7 +13,7 @@ import Explore from "@material-ui/icons/Explore";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Header from "components/Header/Header.jsx";
+import Header from "components/FertigHeader/Header.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";

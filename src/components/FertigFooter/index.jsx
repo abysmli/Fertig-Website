@@ -23,7 +23,7 @@ function Footer({...props}) {
                                 className={classes.block}
                                 target="_blank"
                             >
-                                {t('Footer.privacyPolicy')}
+                                {t('footer.privacyPolicy')}
                             </a>
                         </ListItem>
                         <ListItem className={classes.inlineBlock}>
@@ -32,7 +32,7 @@ function Footer({...props}) {
                                 className={classes.block}
                                 target="_blank"
                             >
-                                {t('Footer.imprint')}
+                                {t('footer.imprint')}
                             </a>
                         </ListItem>
                         <ListItem className={classes.inlineBlock}>
@@ -41,7 +41,7 @@ function Footer({...props}) {
                                 className={classes.block}
                                 target="_blank"
                             >
-                                {t('Footer.terms')}
+                                {t('footer.terms')}
                             </a>
                         </ListItem>
                         <ListItem className={classes.inlineBlock}>
@@ -50,7 +50,7 @@ function Footer({...props}) {
                                 className={classes.block}
                                 target="_blank"
                             >
-                                {t('Footer.cookies')}
+                                {t('footer.cookies')}
                             </a>
                         </ListItem>
                     </List>
