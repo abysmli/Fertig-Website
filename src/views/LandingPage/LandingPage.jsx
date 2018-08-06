@@ -42,8 +42,6 @@ class LandingPage extends React.Component {
             productSections,
         } = this.props;
 
-        console.log(productSections);
-
         return productSections.map(productSection => {
             return (
                 <ProductSection productSection={productSection}/>
