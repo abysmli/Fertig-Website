@@ -7,6 +7,10 @@ export default {
             liquid: "Geschirrspülmittel",
             others: "Mehr",
             faq: "FAQ",
+            classicTab: "Classic-Tabs",
+            premiumTab: "Premium-Tabs",
+            oneKgPowder: "1kg Pulver",
+            oneEightKgPowder: "1.8kg Pulver"
         },
         sections: {
             title: {

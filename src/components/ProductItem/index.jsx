@@ -12,6 +12,7 @@ class ProductItem extends React.Component {
     render() {
         const {
             classes,
+            id,
             img,
             title,
             titleLabel,
@@ -21,7 +22,7 @@ class ProductItem extends React.Component {
         } = this.props;
 
         return (
-            <GridItem xs={12} sm={12} md={6} className={classes.wrapper}>
+            <GridItem xs={12} sm={12} md={6} className={classes.wrapper} id={id}>
                 <div className={classes.imgWrapper}>
                     <img src={img} alt="product" className={classes.img}/>
                 </div>
@@ -47,10 +48,11 @@ export default withStyles(productItemStyle)(ProductItem);
 
 ProductItem.propTypes = {
     buttonText: PropTypes.string,
+    id: PropTypes.string,
     classes: PropTypes.object.isRequired,
     img: PropTypes.string,
     subtitle: PropTypes.string,
-    title: PropTypes.object,
+    title: PropTypes.string,
     titleLabel: PropTypes.string,
     showDetails: PropTypes.func
 };

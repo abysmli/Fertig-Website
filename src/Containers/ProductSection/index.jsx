@@ -34,12 +34,14 @@ class ProductSection extends React.Component {
     renderProductItems(products) {
         return products.map(item => {
             const img = _.get(item, 'imgRef');
-            const uid = _.get(item, 'uid');
+            const id = _.get(item, 'id');
             const name = _.get(item, 'name');
             const label = _.get(item, 'label');
             const description = _.get(item, 'description');
             return (
-                <ProductItem img={img}
+                <ProductItem id={id}
+                             key={id}
+                             img={img}
                              title={name}
                              titleLabel={label}
                              subtitle={description}

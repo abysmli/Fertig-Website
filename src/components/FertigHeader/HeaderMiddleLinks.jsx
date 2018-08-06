@@ -36,16 +36,16 @@ class HeaderMiddleLinks extends React.Component {
                             color: "transparent"
                         }}
                         dropdownList={[
-                            <a href="#tabs"
+                            <a href="#classic-tab"
                                className={classes.dropdownLink}
                             >
-                                {t('navigation_tabs')}
+                                {t('header.classicTab')}
                             </a>,
                             <a
-                                href="#powder"
+                                href="#premium-tab"
                                 className={classes.dropdownLink}
                             >
-                                {t('navigation_powder')}
+                                {t('header.premiumTab')}
                             </a>
                         ]}
                     />
@@ -59,16 +59,16 @@ class HeaderMiddleLinks extends React.Component {
                             color: "transparent"
                         }}
                         dropdownList={[
-                            <a href="#tabs"
+                            <a href="#one-kg-powder"
                                className={classes.dropdownLink}
                             >
-                                {t('navigation_tabs')}
+                                {t('header.oneKgPowder')}
                             </a>,
                             <a
-                                href="#powder"
+                                href="#one-eight-kg-powder"
                                 className={classes.dropdownLink}
                             >
-                                {t('navigation_powder')}
+                                {t('header.oneEightKgPowder')}
                             </a>
                         ]}
                     />
