@@ -2,6 +2,7 @@ import * as actions from './Actions';
 
 const initialState = {
     showProductSectionLoader: false,
+    showCarouselLoader: false
 };
 
 export default function LoadersReducer(state = initialState, action = {}) {
@@ -16,6 +17,13 @@ export default function LoadersReducer(state = initialState, action = {}) {
             return {
                 ...state,
                 showProductSectionLoader: !showProductSectionLoader,
+            };
+        }
+        case actions.TOGGLE_CAROUSEL_LOADER: {
+            const {showCarouselLoader} = state;
+            return {
+                ...state,
+                showCarouselLoader: !showCarouselLoader,
             };
         }
         default:

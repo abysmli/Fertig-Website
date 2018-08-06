@@ -2,6 +2,7 @@ import * as actions from './Actions';
 
 const initialState = {
     productSections: [],
+    carousels: [],
     isLoadingProductionSections: false,
 };
 
@@ -16,6 +17,12 @@ export default function ProductsReducer(state = initialState, action = {}) {
             return {
                 ...state,
                 productSections: data,
+            }
+        }
+        case actions.RECEIVE_CAROUSEL: {
+            return {
+                ...state,
+                carousels: data,
             }
         }
         default: {

@@ -1,24 +1,75 @@
 import React from "react";
+import {compose} from "recompose";
+import {translate} from "react-i18next";
+import {connect} from "react-redux";
+import _ from "lodash";
 // react component for creating beautiful carousel
 import Carousel from "react-slick";
 import withStyles from "@material-ui/core/styles/withStyles";
 // material-ui components
 import Hidden from '@material-ui/core/Hidden';
-// @material-ui/icons
-import LocationOn from "@material-ui/icons/LocationOn";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
 import GradientColorText from "components/GradientColorText";
 import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle"
-
-import image1 from "assets/img/carousel/1.jpg";
-import image2 from "assets/img/carousel/2.jpg";
-import image3 from "assets/img/carousel/3.jpg";
-import carouselFirst from "assets/img/carousel/carousel-first.png";
+import * as ProductsActions from "../../../Reducers/Products/Actions";
 
 class SectionCarousel extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.props.fetchCarousel();
+    }
+
+    renderCarousels() {
+        const {
+            carousels,
+            classes,
+        } = this.props;
+
+        return carousels.map(carousel => {
+            const uid = _.get(carousel, 'uid');
+            const title = _.get(carousel, 'title');
+            const label = _.get(carousel, 'label', '');
+            const img = _.get(carousel, 'imgRef');
+            const bgImg = _.get(carousel, 'backgroundImgRef');
+            return (
+                <div key={uid}>
+                    <div className={classes.carouselBackgroundImg}
+                         style={{backgroundImage: `url(${bgImg})`}}/>
+                    <GridContainer className="fertig-slick-caption" alignItems={"center"}>
+                        <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
+                            <Hidden mdDown>
+                                <GradientColorText fontType='h1'
+                                                   textContent={title}/>
+                            </Hidden>
+                            <Hidden lgUp>
+                                <GradientColorText fontType='h3'
+                                                   textContent={title}/>
+                            </Hidden>
+                            <br/>
+                            {label &&
+                            <GradientColorText fontType='h5'
+                                               textContent={label}
+                                               invert/>
+                            }
+                            <br/>
+                            <a className="fertig-caption-button">
+                                了解更多>
+                            </a>
+                        </GridItem>
+                        <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
+                            <img src={img} alt="products" className="fertig-caption-img"/>
+                        </GridItem>
+                    </GridContainer>
+                </div>
+            )
+        })
+    }
+
     render() {
         const settings = {
             dots: true,
@@ -29,59 +80,17 @@ class SectionCarousel extends React.Component {
             autoplay: false
         };
 
-        const {classes} = this.props;
+        const {
+            classes,
+            carousels
+        } = this.props;
+
         return (
             <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                     <Card className={classes.card}>
                         <Carousel {...settings}>
-                            <div>
-                                <div className={classes.carouselBackgroundImg}
-                                     style={{backgroundImage: `url(${image1})`}}/>
-                                <GridContainer className="fertig-slick-caption" alignItems={"center"}>
-                                    <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
-                                        <Hidden mdDown>
-                                            <GradientColorText fontType='h1'
-                                                               textContent='来自德国的专业清洁品牌'/>
-                                        </Hidden>
-                                        <Hidden lgUp>
-                                            <GradientColorText fontType='h3'
-                                                               textContent='来自德国的专业清洁品牌'/>
-                                        </Hidden>
-                                        <br/>
-                                        <GradientColorText fontType='h5'
-                                                           textContent='高效清洁 环保健康'
-                                                           invert/>
-                                        <br/>
-                                        <a className="fertig-caption-button">
-                                            了解更多>
-                                        </a>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
-                                        <img src={carouselFirst} alt="products" className="fertig-caption-img"/>
-                                    </GridItem>
-                                </GridContainer>
-                            </div>
-                            <div>
-                                <div className={classes.carouselBackgroundImg}
-                                     style={{backgroundImage: `url(${image2})`}}/>
-                                <div className="slick-caption">
-                                    <h4>
-                                        <LocationOn className="slick-icons"/>Somewhere Beyond,
-                                        United States
-                                    </h4>
-                                </div>
-                            </div>
-                            <div>
-                                <div className={classes.carouselBackgroundImg}
-                                     style={{backgroundImage: `url(${image3})`}}/>
-                                <div className="slick-caption">
-                                    <h4>
-                                        <LocationOn className="slick-icons"/>Yellowstone
-                                        National Park, United States
-                                    </h4>
-                                </div>
-                            </div>
+                            {carousels && this.renderCarousels()}
                         </Carousel>
                     </Card>
                 </GridItem>
@@ -90,4 +99,17 @@ class SectionCarousel extends React.Component {
     }
 }
 
-export default withStyles(carouselStyle)(SectionCarousel);
+const mapStateToProps = (state, props) => ({
+    showCarouselLoader: state.Loaders.showCarouselLoader,
+    carousels: state.Products.carousels
+});
+
+const mapDispatchToProps = dispatch => ({
+    fetchCarousel: () => dispatch(ProductsActions.fetchCarousel())
+});
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withStyles(carouselStyle),
+    translate('common'),
+)(SectionCarousel);
