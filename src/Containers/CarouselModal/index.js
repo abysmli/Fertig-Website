@@ -13,17 +13,16 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import IconButton from "@material-ui/core/IconButton";
 import withMobileDialog from '@material-ui/core/withMobileDialog';
 
-import Product from 'Containers/Product';
+import modalImg from 'assets/img/carousel/modal.jpg';
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
-import * as ProductsActions from "../../Reducers/Products/Actions";
 import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage";
 
 function Transition(props) {
     return <Slide direction="down" {...props} />;
 }
 
-class ProductModal extends React.Component {
+class CarouselModal extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -66,7 +65,7 @@ class ProductModal extends React.Component {
                     </DialogTitle>
                     <DialogContent className={classes.dialogContent}>
                         <DialogContentText>
-                            {<Product/>}
+                            <img src={modalImg} alt="missing img"/>
                         </DialogContentText>
                     </DialogContent>
                 </Dialog>
@@ -75,25 +74,19 @@ class ProductModal extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => ({
-    showProductLoader: state.Loaders.showProductLoader,
-    selectedProduct: state.Products.selectedProduct
-});
+const mapStateToProps = (state, props) => ({});
 
-const mapDispatchToProps = dispatch => ({
-    fetchProduct: (uid) => dispatch(ProductsActions.fetchProduct(uid))
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
     translate('common'),
     withStyles(landingPageStyle),
     withMobileDialog()
-)(ProductModal);
+)(CarouselModal);
 
-ProductModal.propTypes = {
+CarouselModal.propTypes = {
     classes: PropTypes.object,
-    fetchProduct: PropTypes.func,
     handleClose: PropTypes.func,
     open: PropTypes.bool,
     uid: PropTypes.number

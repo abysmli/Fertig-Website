@@ -44,7 +44,8 @@ class LandingPage extends React.Component {
 
         return productSections.map(productSection => {
             return (
-                <ProductSection productSection={productSection}/>
+                <ProductSection key={Math.random()}
+                                productSection={productSection}/>
             )
         })
     }

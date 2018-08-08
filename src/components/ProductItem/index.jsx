@@ -9,20 +9,40 @@ import GradientColorText from "components/GradientColorText";
 import productItemStyle from "./style";
 
 class ProductItem extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        const {
+            uid,
+            setSelectedUid,
+            showDetails
+        } = this.props;
+
+        if (typeof setSelectedUid === 'function') {
+            setSelectedUid(uid);
+        }
+        if (typeof showDetails === 'function') {
+            showDetails();
+        }
+    }
+
     render() {
         const {
             classes,
-            id,
+            uid,
             img,
             title,
             titleLabel,
             subtitle,
             buttonText,
-            showDetails
         } = this.props;
 
         return (
-            <GridItem xs={12} sm={12} md={6} className={classes.wrapper} id={id}>
+            <GridItem xs={12} sm={12} md={6} className={classes.wrapper} id={uid}>
                 <div className={classes.imgWrapper}>
                     <img src={img} alt="product" className={classes.img}/>
                 </div>
@@ -36,7 +56,7 @@ class ProductItem extends React.Component {
                     <h3 className={classes.title}>{title}</h3>
                 </div>
                 <h5 className={classes.subtitle}>{subtitle}</h5>
-                <Button color="primary" className={classes.button} onClick={showDetails}>
+                <Button color="primary" className={classes.button} onClick={this.handleClick}>
                     <span className={classes.buttonText}>{buttonText ? buttonText : '产品详情'}</span>
                 </Button>
             </GridItem>
@@ -48,13 +68,14 @@ export default withStyles(productItemStyle)(ProductItem);
 
 ProductItem.propTypes = {
     buttonText: PropTypes.string,
-    id: PropTypes.string,
     classes: PropTypes.object.isRequired,
     img: PropTypes.string,
+    setSelectedUid: PropTypes.func,
+    showDetails: PropTypes.func,
     subtitle: PropTypes.string,
     title: PropTypes.string,
     titleLabel: PropTypes.string,
-    showDetails: PropTypes.func
+    uid: PropTypes.number
 };
 
 ProductItem.defaultProps = {

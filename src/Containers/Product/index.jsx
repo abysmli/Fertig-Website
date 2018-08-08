@@ -93,7 +93,7 @@ class Product extends React.Component {
     renderFeatures(features) {
         return features.map(feature => {
             return (
-                <div>
+                <div key={Math.random()}>
                     <img src={feature.iconRef} alt={feature.name}/><span>{feature.name}</span>
                 </div>
             )
@@ -194,7 +194,7 @@ class Product extends React.Component {
         const {classes} = this.props;
         return steps.map(step => {
             return (
-                <div className={classes.stepWrapper}>
+                <div className={classes.stepWrapper} key={Math.random()}>
                     <span className={classes.stepNumber}>{step.step}</span>
                     <span className={classes.stepDescription}>{step.description}</span>
                 </div>
@@ -240,7 +240,7 @@ class Product extends React.Component {
 
         return contents.map(content => {
             return (
-                <GridItem xs={12} className={classes.itemWrapper}>
+                <GridItem xs={12} className={classes.itemWrapper} key={Math.random()}>
                     <div className={classes.contentWrapper}>
                         {content.content}
                     </div>

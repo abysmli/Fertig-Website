@@ -3,9 +3,11 @@ import * as LoadersActions from 'Reducers/Loaders/Actions';
 
 const productSectionJson = 'Data/cn/ProductSection.json';
 const carouselJson = 'Data/cn/Carousel.json';
+const productsJson = 'Data/cn/Products';
 
 export const RECEIVE_PRODUCT_SECTION = 'RECEIVE_PRODUCT_SECTION';
 export const RECEIVE_CAROUSEL = 'RECEIVE_CAROUSEL';
+export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 
 export const fetchProductSection = () => {
     return function (dispatch) {
@@ -20,6 +22,24 @@ export const receiveProductSection = data => {
         dispatch(LoadersActions.toggleProductSectionLoader());
         return dispatch({
             type: RECEIVE_PRODUCT_SECTION,
+            data
+        })
+    }
+};
+
+export const fetchProduct = (uid) => {
+    return function (dispatch) {
+        dispatch(LoadersActions.toggleProductLoader());
+        dispatch(ApiActions.fetchData(`${productsJson}/${uid}.json`, receiveProduct))
+
+    }
+};
+
+export const receiveProduct = data => {
+    return function (dispatch) {
+        dispatch(LoadersActions.toggleProductLoader());
+        return dispatch({
+            type: RECEIVE_PRODUCT,
             data
         })
     }

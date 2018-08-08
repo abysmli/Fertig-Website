@@ -13,7 +13,8 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
 import GradientColorText from "components/GradientColorText";
-import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle"
+import CarouselModal from "Containers/CarouselModal";
+import carouselStyle from "assets/jss/material-kit-react/views/landingPageSections/carouselStyle";
 import * as ProductsActions from "../../../Reducers/Products/Actions";
 
 class SectionCarousel extends React.Component {
@@ -21,7 +22,18 @@ class SectionCarousel extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            isModalOpen: false
+        };
+
         this.props.fetchCarousel();
+        this.toggleModal = this.toggleModal.bind(this);
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        })
     }
 
     renderCarousels() {
@@ -57,14 +69,18 @@ class SectionCarousel extends React.Component {
                                                invert/>
                             }
                             <br/>
-                            <a className="fertig-caption-button">
+                            <button className="fertig-caption-button" onClick={this.toggleModal}>
                                 了解更多>
-                            </a>
+                            </button>
                         </GridItem>
                         <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">
                             <img src={img} alt="products" className="fertig-caption-img"/>
                         </GridItem>
                     </GridContainer>
+                    {this.state.isModalOpen &&
+                    <CarouselModal open={this.state.isModalOpen}
+                                   handleClose={this.toggleModal}/>
+                    }
                 </div>
             )
         })

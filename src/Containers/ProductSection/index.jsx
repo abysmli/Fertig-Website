@@ -19,10 +19,12 @@ class ProductSection extends React.Component {
         super(props);
 
         this.state = {
-            isDetailsModalOpen: false
+            isDetailsModalOpen: false,
+            selectedUid: null,
         };
 
         this.showDetailsModal = this.showDetailsModal.bind(this);
+        this.setSelectedUid = this.setSelectedUid.bind(this);
     }
 
     showDetailsModal() {
@@ -31,20 +33,27 @@ class ProductSection extends React.Component {
         })
     }
 
+    setSelectedUid(uid) {
+        this.setState({
+            selectedUid: uid
+        })
+    }
+
     renderProductItems(products) {
         return products.map(item => {
             const img = _.get(item, 'imgRef');
-            const id = _.get(item, 'id');
+            const uid = _.get(item, 'uid');
             const name = _.get(item, 'name');
             const label = _.get(item, 'label');
             const description = _.get(item, 'description');
             return (
-                <ProductItem id={id}
-                             key={id}
+                <ProductItem uid={uid}
+                             key={uid}
                              img={img}
                              title={name}
                              titleLabel={label}
                              subtitle={description}
+                             setSelectedUid={this.setSelectedUid}
                              showDetails={this.showDetailsModal}/>
             )
         })
@@ -98,6 +107,7 @@ class ProductSection extends React.Component {
                 </GridItem>
                 {this.state.isDetailsModalOpen &&
                 <ProductModal open={this.state.isDetailsModalOpen}
+                              uid={this.state.selectedUid}
                               handleClose={this.showDetailsModal}/>
                 }
             </GridContainer>
