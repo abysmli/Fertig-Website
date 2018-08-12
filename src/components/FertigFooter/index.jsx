@@ -21,7 +21,6 @@ function Footer({...props}) {
                             <a
                                 href="#"
                                 className={classes.block}
-                                target="_blank"
                             >
                                 {t('footer.privacyPolicy')}
                             </a>
@@ -30,7 +29,6 @@ function Footer({...props}) {
                             <a
                                 href="#"
                                 className={classes.block}
-                                target="_blank"
                             >
                                 {t('footer.imprint')}
                             </a>
@@ -39,7 +37,6 @@ function Footer({...props}) {
                             <a
                                 href="#"
                                 className={classes.block}
-                                target="_blank"
                             >
                                 {t('footer.terms')}
                             </a>
@@ -48,7 +45,6 @@ function Footer({...props}) {
                             <a
                                 href="#"
                                 className={classes.block}
-                                target="_blank"
                             >
                                 {t('footer.cookies')}
                             </a>

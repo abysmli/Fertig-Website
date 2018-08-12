@@ -1,92 +1,13 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+import {translate} from 'react-i18next';
 
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import GradientColorText from "components/GradientColorText";
 
 import productStyle from "./style";
-import icon1 from 'assets/img/icons/1.png';
-import icon2 from 'assets/img/icons/2.png';
-import icon3 from 'assets/img/icons/3.png';
 import bgIntro from 'assets/img/productModal/bgIntro.png';
-import imgIntro from 'assets/img/productModal/imgIntro.png';
-import imgPara from 'assets/img/productModal/imgPara.png';
-import imgUsage from 'assets/img/productModal/imgUsage.png';
-
-const product = {
-    introduction: {
-        name: 'FERTIG洗碗块标准版',
-        features: [
-            {
-                name: '高效溶解',
-                iconRef: icon1
-            },
-            {
-                name: '自然清新',
-                iconRef: icon2,
-            },
-            {
-                name: '没有残留',
-                iconRef: icon3
-            }
-        ],
-        img: imgIntro,
-        description: '此款绿色环保洗碗块，适用于各种洗碗机。按照洗碗机的使用说明进行操作，以得到更好的使用体验。此款洗碗块为标准洗涤产品，一般需要添加FERTIG洗碗盐和FERTIG光亮剂配合使用，以达到更好的洗涤效果。',
-    },
-    parameters: {
-        img: imgPara,
-        productName: '自然洗碗机洗涤块\n（柠檬香）',
-        pack: {
-            weight: '540g',
-            count: '30块'
-        },
-        origin: '德国',
-        validity: '三年',
-        mixture: [
-            {
-                name: '碳酸钠',
-            },
-            {
-                name: '过碳酸钠'
-            }
-        ]
-    },
-    usage: {
-        img: imgUsage,
-        steps: [
-            {
-                step: 1,
-                description: '打开洗碗块包装块，取出一块洗碗块，撕开包装'
-            },
-            {
-                step: 2,
-                description: '打开洗碗机洗涤块使用仓，一般在洗碗机的舱门内侧'
-            },
-            {
-                step: 3,
-                description: '放入洗碗块，合上盖子'
-            },
-            {
-                step: 4,
-                description: '设置好要清洗的器具后关上洗碗机门'
-            },
-            {
-                step: 5,
-                description: '选择清洗程序，开始洗碗'
-            }
-        ]
-    },
-    attentions: {
-        img: '',
-        contents: [{
-            content: '银制、铝制品可能会褪色或变暗，铜制品不要跟银制品或者不锈钢制品放在一起洗，避免变色。将本品正确放置在专用槽内，用完以后注意密封，存储于干燥处。'
-        }, {
-            content: '放置于儿童无法触及的地方，若不慎入眼，请立马用水冲；如误食请立即送医就诊并出示商品包装。'
-        }
-        ]
-    }
-};
 
 class Product extends React.Component {
 
@@ -142,7 +63,10 @@ class Product extends React.Component {
     }
 
     renderParameters(parameters) {
-        const {classes} = this.props;
+        const {
+            t,
+            classes
+        } = this.props;
 
         const {
             img,
@@ -155,7 +79,7 @@ class Product extends React.Component {
 
         let mixtureNames = '';
         mixture.forEach((obj, index) => {
-            mixtureNames = (obj.name) + ',' + mixtureNames;
+            mixtureNames = (obj.name) + ', ' + mixtureNames;
         });
 
         return (
@@ -164,7 +88,7 @@ class Product extends React.Component {
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.contentWrapper}>
                             <GridItem xs={12} sm={12} md={6}>
-                                <h2 className={classes.title}>产品参数</h2>
+                                <h2 className={classes.title}>{t('product.parameters.information')}</h2>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={6}>
                                 <img src={img} alt="img" className={classes.image}/>
@@ -173,15 +97,17 @@ class Product extends React.Component {
                     </GridItem>
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.table}>
-                            <GridItem xs={2} className={classes.tableCell}>产品名称</GridItem>
+                            <GridItem xs={2}
+                                      className={classes.tableCell}>{t('product.parameters.productName')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{productName}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>规格</GridItem>
+                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.pack')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{`${pack.weight}(${pack.count})`}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>产地</GridItem>
+                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.origin')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{origin}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>有效期</GridItem>
+                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.validity')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{validity}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>成分</GridItem>
+                            <GridItem xs={2}
+                                      className={classes.tableCell}>{t('product.parameters.ingredient')}</GridItem>
                             <GridItem xs={10} className={classes.tableCell}>{mixtureNames}</GridItem>
                         </GridContainer>
                     </GridItem>
@@ -203,7 +129,10 @@ class Product extends React.Component {
     }
 
     renderUsage(usage) {
-        const {classes} = this.props;
+        const {
+            t,
+            classes
+        } = this.props;
 
         const {
             img,
@@ -216,7 +145,7 @@ class Product extends React.Component {
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.contentWrapper}>
                             <GridItem xs={12}>
-                                <h2 className={classes.title}>使用方法</h2>
+                                <h2 className={classes.title}>{t('product.usage.usage')}</h2>
                             </GridItem>
                         </GridContainer>
                     </GridItem>
@@ -250,7 +179,10 @@ class Product extends React.Component {
     }
 
     renderAttentions(attentions) {
-        const {classes} = this.props;
+        const {
+            t,
+            classes
+        } = this.props;
 
         const {
             contents
@@ -262,7 +194,7 @@ class Product extends React.Component {
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.contentWrapper}>
                             <GridItem xs={12}>
-                                <h2 className={classes.title}>注意事项</h2>
+                                <h2 className={classes.title}>{t('product.hint.hint')}</h2>
                             </GridItem>
                         </GridContainer>
                     </GridItem>
@@ -273,7 +205,10 @@ class Product extends React.Component {
     }
 
     render() {
-        const {classes} = this.props;
+        const {
+            classes,
+            product
+        } = this.props;
 
         const {
             introduction,
@@ -293,5 +228,5 @@ class Product extends React.Component {
     }
 }
 
-export default withStyles(productStyle)(Product);
+export default withStyles(productStyle)(translate('common')(Product));
 

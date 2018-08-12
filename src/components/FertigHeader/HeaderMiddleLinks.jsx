@@ -73,6 +73,7 @@ class HeaderMiddleLinks extends React.Component {
                         ]}
                     />
                 </ListItem>
+                {false &&
                 <ListItem className={classes.listItem}>
                     <CustomDropdown
                         noLiPadding
@@ -96,6 +97,8 @@ class HeaderMiddleLinks extends React.Component {
                         ]}
                     />
                 </ListItem>
+                }
+                {false &&
                 <ListItem className={classes.listItem}>
                     <Button
                         color="transparent"
@@ -103,6 +106,7 @@ class HeaderMiddleLinks extends React.Component {
                     >{t('header.faq')}
                     </Button>
                 </ListItem>
+                }
             </List>
         );
 

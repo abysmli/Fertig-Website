@@ -91,6 +91,7 @@ const productStyle = {
         },
         '&:last-child': {
             marginLeft: '-2px',
+            paddingLeft: '15px',
             borderLeft: 'none'
         }
     },

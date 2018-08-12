@@ -3,6 +3,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Const from 'Core/Const';
 import {translate} from 'react-i18next';
 import {compose} from 'recompose';
+import {connect} from 'react-redux';
 import _ from 'lodash';
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
@@ -13,6 +14,7 @@ import ProductItem from "components/ProductItem";
 import ProductModal from "Containers/ProductModal";
 // assets
 import productSectionStyle from "./style";
+import * as ProductsActions from "Reducers/Products/Actions";
 
 class ProductSection extends React.Component {
     constructor(props) {
@@ -23,38 +25,41 @@ class ProductSection extends React.Component {
             selectedUid: null,
         };
 
-        this.showDetailsModal = this.showDetailsModal.bind(this);
-        this.setSelectedUid = this.setSelectedUid.bind(this);
+        this.toggleDetailsModal = this.toggleDetailsModal.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    showDetailsModal() {
-        this.setState({
-            isDetailsModalOpen: !this.state.isDetailsModalOpen
-        })
-    }
-
-    setSelectedUid(uid) {
+    handleClick(uid) {
+        //this.props.fetchProduct(uid);
         this.setState({
             selectedUid: uid
+        });
+        this.toggleDetailsModal();
+    }
+
+    toggleDetailsModal() {
+        this.setState({
+            isDetailsModalOpen: !this.state.isDetailsModalOpen
         })
     }
 
     renderProductItems(products) {
         return products.map(item => {
             const img = _.get(item, 'imgRef');
+            const id = _.get(item, 'id');
             const uid = _.get(item, 'uid');
             const name = _.get(item, 'name');
             const label = _.get(item, 'label');
             const description = _.get(item, 'description');
             return (
-                <ProductItem uid={uid}
-                             key={uid}
+                <ProductItem id={id}
+                             key={id}
+                             uid={uid}
                              img={img}
                              title={name}
                              titleLabel={label}
                              subtitle={description}
-                             setSelectedUid={this.setSelectedUid}
-                             showDetails={this.showDetailsModal}/>
+                             handleClick={this.handleClick}/>
             )
         })
     }
@@ -108,14 +113,24 @@ class ProductSection extends React.Component {
                 {this.state.isDetailsModalOpen &&
                 <ProductModal open={this.state.isDetailsModalOpen}
                               uid={this.state.selectedUid}
-                              handleClose={this.showDetailsModal}/>
+                              handleClose={this.toggleDetailsModal}/>
                 }
             </GridContainer>
         );
     }
 }
 
+const mapStateToProps = (state, props) => ({
+    showProductLoader: state.Loaders.showProductLoader,
+    selectedProduct: state.Products.selectedProduct
+});
+
+const mapDispatchToProps = dispatch => ({
+    fetchProduct: (uid) => dispatch(ProductsActions.fetchProduct(uid))
+});
+
 export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
     withStyles(productSectionStyle),
     translate('common'),
 )(ProductSection);

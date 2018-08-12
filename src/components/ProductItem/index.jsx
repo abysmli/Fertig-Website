@@ -19,23 +19,17 @@ class ProductItem extends React.Component {
     handleClick() {
         const {
             uid,
-            setSelectedUid,
-            showDetails
+            handleClick
         } = this.props;
 
-        if (typeof setSelectedUid === 'function') {
-            setSelectedUid(uid);
-        }
-        if (typeof showDetails === 'function') {
-            showDetails();
-        }
+        handleClick(uid)
     }
 
     render() {
         const {
             t,
             classes,
-            uid,
+            id,
             img,
             title,
             titleLabel,
@@ -44,7 +38,7 @@ class ProductItem extends React.Component {
         } = this.props;
 
         return (
-            <GridItem xs={12} sm={12} md={6} className={classes.wrapper} id={uid}>
+            <GridItem xs={12} sm={12} md={6} className={classes.wrapper} id={id}>
                 <div className={classes.imgWrapper}>
                     <img src={img} alt="product" className={classes.img}/>
                 </div>
@@ -72,10 +66,9 @@ ProductItem.propTypes = {
     buttonText: PropTypes.string,
     classes: PropTypes.object.isRequired,
     img: PropTypes.string,
-    setSelectedUid: PropTypes.func,
-    showDetails: PropTypes.func,
     subtitle: PropTypes.string,
     title: PropTypes.string,
     titleLabel: PropTypes.string,
-    uid: PropTypes.number
+    id: PropTypes.string,
+    uid: PropTypes.number,
 };
