@@ -57,7 +57,6 @@ const productStyle = {
     featureWrapper: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
     },
     title: {
         fontWeight: 500,

@@ -47,9 +47,11 @@ class Product extends React.Component {
                             <GridItem xs={12} sm={12} md={6} className={classes.featureWrapper}>
                                 {this.renderFeatures(features)}
                             </GridItem>
+                            {img &&
                             <GridItem xs={12} sm={12} md={6}>
                                 <img src={img} alt="img" className={classes.image}/>
                             </GridItem>
+                            }
                         </GridContainer>
                     </GridItem>
                     <GridItem xs={12} className={classes.itemWrapper}>
@@ -90,9 +92,11 @@ class Product extends React.Component {
                             <GridItem xs={12} sm={12} md={6}>
                                 <h2 className={classes.title}>{t('product.parameters.information')}</h2>
                             </GridItem>
+                            {img &&
                             <GridItem xs={12} sm={12} md={6}>
                                 <img src={img} alt="img" className={classes.image}/>
                             </GridItem>
+                            }
                         </GridContainer>
                     </GridItem>
                     <GridItem xs={12} className={classes.itemWrapper}>
@@ -101,7 +105,8 @@ class Product extends React.Component {
                                       className={classes.tableCell}>{t('product.parameters.productName')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{productName}</GridItem>
                             <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.pack')}</GridItem>
-                            <GridItem xs={4} className={classes.tableCell}>{`${pack.weight}(${pack.count})`}</GridItem>
+                            <GridItem xs={4}
+                                      className={classes.tableCell}>{`${pack.weight}${pack.count ? (pack.count) : ''}`}</GridItem>
                             <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.origin')}</GridItem>
                             <GridItem xs={4} className={classes.tableCell}>{origin}</GridItem>
                             <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.validity')}</GridItem>
@@ -151,12 +156,14 @@ class Product extends React.Component {
                     </GridItem>
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.usageContentWrapper}>
-                            <GridItem xs={12} sm={12} md={5} className={classes.usageContent}>
+                            <GridItem xs={12} sm={12} md={6} className={classes.usageContent}>
                                 {this.renderSteps(steps)}
                             </GridItem>
-                            <GridItem xs={12} sm={12} md={7}>
+                            {img &&
+                            <GridItem xs={12} sm={12} md={6}>
                                 <img src={img} alt="img" className={classes.image}/>
                             </GridItem>
+                            }
                         </GridContainer>
                     </GridItem>
                 </GridContainer>
