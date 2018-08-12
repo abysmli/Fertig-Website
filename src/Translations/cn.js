@@ -28,5 +28,21 @@ export default {
             terms: '使用条款',
             cookies: 'Cookies'
         },
+        product: {
+            parameters: {
+                information: '产品信息',
+                productName: '产品名称',
+                origin: '产地',
+                pack: '包装',
+                validity: '有效期',
+                ingredient: '成分',
+            },
+            usage: {
+                usage: '使用方法',
+            },
+            hint: {
+                hint: '注意事项',
+            }
+        }
     }
 };

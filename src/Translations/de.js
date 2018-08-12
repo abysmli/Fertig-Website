@@ -28,5 +28,21 @@ export default {
             terms: 'Nutzungsbedingungen',
             cookies: 'Cookies'
         },
+        product: {
+            parameters: {
+                information: 'Produktinformation',
+                productName: 'Produktname',
+                origin: 'Herstellungsort',
+                pack: 'Verpackung',
+                validity: 'Gultigkeitsdauer',
+                ingredient: 'Inhaltstoffe',
+            },
+            usage: {
+                usage: 'Anwendung',
+            },
+            hint: {
+                hint: 'Hinweise',
+            }
+        }
     }
 };
