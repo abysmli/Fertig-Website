@@ -1,0 +1,46 @@
+[
+  {
+    "uid": 1,
+    "series": "tab",
+    "products": [
+      {
+        "uid": 11,
+        "id": "classic-tab",
+        "name": "Fertig Classic Tabs",
+        "description": "Entfernt selbst hartnäckige Verschmutzungen zuverlässig. So können Sie sicher sein, dass Ihr Geschirr strahlend sauber wird.",
+        "label": "",
+        "imgRef": "assets/img/products/classic-tabs.png"
+      },
+      {
+        "uid": 12,
+        "id": "premium-tab",
+        "name": "Fertig Premium Tabs",
+        "description": "Kraftvolle Reinigung für strahlenden Glanz. Extra Schonung und Sauberkeit für die Maschine. Auch mit dem frischen Geruch von Zitrone & Limette erhältlich.",
+        "label": "Multi-Effect",
+        "imgRef": "assets/img/products/premium-tabs.png"
+      }
+    ]
+  },
+  {
+    "uid": 2,
+    "series": "powder",
+    "products": [
+      {
+        "uid": 21,
+        "id": "one-kg-powder",
+        "name": "Fertig Classic Pulver 1kg",
+        "description": "Classic Pulver entfernt selbst hartnäckige Flecken und Beläge bei jedem Spülgang – für gründliche Sauberkeit und strahlenden Glanz.",
+        "label": "",
+        "imgRef": "assets/img/products/1kg-powder.png"
+      },
+      {
+        "uid": 22,
+        "id": "one-eight-kg-powder",
+        "name": "Fertig Classic Pulver 1.8kg",
+        "description": "Classic Pulver entfernt selbst hartnäckige Flecken und Beläge bei jedem Spülgang – für gründliche Sauberkeit und strahlenden Glanz.",
+        "label": "",
+        "imgRef": "assets/img/products/1.8kg-powder.png"
+      }
+    ]
+  }
+]

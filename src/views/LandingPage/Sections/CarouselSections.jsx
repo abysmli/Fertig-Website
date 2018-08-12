@@ -38,6 +38,7 @@ class SectionCarousel extends React.Component {
 
     renderCarousels() {
         const {
+            t,
             carousels,
             classes,
         } = this.props;
@@ -70,7 +71,7 @@ class SectionCarousel extends React.Component {
                             }
                             <br/>
                             <button className="fertig-caption-button" onClick={this.toggleModal}>
-                                了解更多>
+                                {t('carousel.more').toUpperCase()}>
                             </button>
                         </GridItem>
                         <GridItem xs={12} sm={12} md={12} lg={6} className="fertig-slick-caption-item">

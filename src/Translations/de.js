@@ -1,5 +1,8 @@
 export default {
     common: {
+        carousel: {
+            more: "Mehr erfahren"
+        },
         header: {
             tab: "Geschirrspültabs",
             powder: "Geschirrspülpulver",
@@ -17,6 +20,7 @@ export default {
                 tab: 'Geschirrspültabs',
                 powder: 'Geschirrspülpulver'
             },
+            more: "Mehr erfahren"
         },
         footer: {
             privacyPolicy: 'Datenschutzrichtlinien',

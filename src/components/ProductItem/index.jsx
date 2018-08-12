@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react';
+import {translate} from "react-i18next";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import GridItem from "components/Grid/GridItem.jsx";
@@ -32,6 +33,7 @@ class ProductItem extends React.Component {
 
     render() {
         const {
+            t,
             classes,
             uid,
             img,
@@ -57,14 +59,14 @@ class ProductItem extends React.Component {
                 </div>
                 <h5 className={classes.subtitle}>{subtitle}</h5>
                 <Button color="primary" className={classes.button} onClick={this.handleClick}>
-                    <span className={classes.buttonText}>{buttonText ? buttonText : '产品详情'}</span>
+                    <span className={classes.buttonText}>{buttonText ? buttonText : t('sections.more')}</span>
                 </Button>
             </GridItem>
         )
     }
 }
 
-export default withStyles(productItemStyle)(ProductItem);
+export default withStyles(productItemStyle)(translate('common')(ProductItem));
 
 ProductItem.propTypes = {
     buttonText: PropTypes.string,
@@ -76,8 +78,4 @@ ProductItem.propTypes = {
     title: PropTypes.string,
     titleLabel: PropTypes.string,
     uid: PropTypes.number
-};
-
-ProductItem.defaultProps = {
-    buttonText: '产品详情'
 };

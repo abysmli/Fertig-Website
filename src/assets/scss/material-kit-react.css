@@ -29,7 +29,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -339,7 +339,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4034,7 +4034,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4119,7 +4119,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -10402,7 +10402,7 @@ footer {
   color: #e91e63; }
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
   font-weight: 300;
   line-height: 1.5em; }
 
@@ -12481,7 +12481,8 @@ thead.thead-inverse th,
     width: 100%; }
 
 .media .media-heading small {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif; }
+  font-family: "Helvetica", "Open Sans", "Arial", sans-serif;
+}
 
 .media .media-body {
   padding-right: 10px; }
@@ -14074,7 +14075,7 @@ select.selectpicker {
     height: 36px;
     padding: 7px 0;
     font-size: 14px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Helvetica", "Open-sans" "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.42857;
     display: block;

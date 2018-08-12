@@ -28,7 +28,7 @@ const productItemStyle = {
     },
     title: {
         color: primaryColor,
-        fontWeight: 500,
+        fontWeight: 700,
         margin: 'auto',
         fontSize: '1.45rem'
     },
@@ -37,7 +37,7 @@ const productItemStyle = {
         color: primaryColorLight,
         lineHeight: '1.5rem',
         textAlign: 'justify',
-        fontWeight: 400,
+        fontWeight: 600,
         fontSize: '0.95rem'
     },
     button: {

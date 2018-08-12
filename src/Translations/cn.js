@@ -1,5 +1,8 @@
 export default {
     common: {
+        carousel: {
+            more: "了解更多"
+        },
         header: {
             tab: "洗碗块",
             powder: "洗碗粉",
@@ -17,6 +20,7 @@ export default {
                 tab: '洗碗块系列',
                 powder: '洗碗粉系列'
             },
+            more: "了解更多",
         },
         footer: {
             privacyPolicy: '隐私条例',

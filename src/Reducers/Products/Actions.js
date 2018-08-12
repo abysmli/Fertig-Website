@@ -1,8 +1,8 @@
 import * as ApiActions from 'Reducers/Api/Actions';
 import * as LoadersActions from 'Reducers/Loaders/Actions';
 
-const productSectionJson = 'Data/cn/ProductSection.json';
-const carouselJson = 'Data/cn/Carousel.json';
+const productSectionJson = 'Data/de/ProductSection.json';
+const carouselJson = 'Data/de/Carousel.json';
 const productsJson = 'Data/cn/Products';
 
 export const RECEIVE_PRODUCT_SECTION = 'RECEIVE_PRODUCT_SECTION';

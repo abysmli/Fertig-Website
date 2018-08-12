@@ -12,7 +12,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import 'flag-icon-css/css/flag-icon.min.css';
-import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
+import headerLinksStyle from "./linksStyle";
 
 class HeaderMiddleLinks extends React.Component {
     constructor(props) {
