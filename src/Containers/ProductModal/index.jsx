@@ -64,6 +64,9 @@ const productsDE = [
             validity: "3 Jahre",
             mixture: [
                 {
+                    name: 'usw.'
+                },
+                {
                     name: "Bleichmittel auf Sauerstoffbasis"
                 },
                 {
@@ -71,9 +74,6 @@ const productsDE = [
                 },
                 {
                     name: "Polycarboxylate"
-                },
-                {
-                    name: 'usw.'
                 }
             ]
         },
@@ -167,17 +167,17 @@ const productsDE = [
             validity: "3 Jahre",
             mixture: [
                 {
-                    name: "Bleichmittel auf Sauerstoffbasis"
+                    name: 'usw.'
                 },
                 {
-                    name: "Polycarboxylate"
+                    name: "Bleichmittel auf Sauerstoffbasis"
                 },
                 {
                     name: "nichtionische Tenside"
                 },
                 {
                     name: "Polycarboxylate"
-                },
+                }
             ]
         },
         usage: {
@@ -242,17 +242,17 @@ const productsDE = [
             validity: "3 Jahre",
             mixture: [
                 {
-                    name: "Bleichmittel auf Sauerstoffbasis"
+                    name: 'usw.'
                 },
                 {
-                    name: "Polycarboxylate"
+                    name: "Bleichmittel auf Sauerstoffbasis"
                 },
                 {
                     name: "nichtionische Tenside"
                 },
                 {
                     name: "Polycarboxylate"
-                },
+                }
             ]
         },
         usage: {
@@ -309,17 +309,17 @@ const productsDE = [
             validity: "3 Jahre",
             mixture: [
                 {
-                    name: "Bleichmittel auf Sauerstoffbasis"
+                    name: 'usw.'
                 },
                 {
-                    name: "Polycarboxylate"
+                    name: "Bleichmittel auf Sauerstoffbasis"
                 },
                 {
                     name: "nichtionische Tenside"
                 },
                 {
                     name: "Polycarboxylate"
-                },
+                }
             ]
         },
         usage: {
@@ -768,8 +768,11 @@ class ProductModal extends React.Component {
         return (
             <div>
                 <Dialog
+                    style={{
+                        paper: classes.paper,
+                    }}
                     classes={{
-                        paper: classes.paper
+                        paper: classes.paper,
                     }}
                     open={open}
                     TransitionComponent={Transition}

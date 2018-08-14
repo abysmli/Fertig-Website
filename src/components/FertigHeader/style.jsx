@@ -47,6 +47,9 @@ const headerStyle = {
         display: "flex",
         flexWrap: "nowrap"
     },
+    button: {
+        color: "#84c6e7"
+    },
     flex: {
         flex: 1
     },

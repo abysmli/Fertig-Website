@@ -22,7 +22,7 @@ const productStyle = {
     itemWrapper: {
         display: 'flex',
         justifyContent: 'center',
-        padding: '16px',
+        padding: '8px',
         color: 'inherit'
     },
     contentWrapper: {
@@ -92,7 +92,9 @@ const productStyle = {
             marginLeft: '-2px',
             paddingLeft: '15px',
             borderLeft: 'none'
-        }
+        },
+        padding: 8,
+        whiteSpace: 'wrap'
     },
     usageContentWrapper: {
         maxWidth: '700px',

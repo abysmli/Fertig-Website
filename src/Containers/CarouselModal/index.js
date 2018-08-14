@@ -13,7 +13,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import IconButton from "@material-ui/core/IconButton";
 import withMobileDialog from '@material-ui/core/withMobileDialog';
 
-import modalImg from 'assets/img/carousel/modal.jpg';
+import modalImgCN from 'assets/img/carousel/CN.jpg';
+import modalImgDE from 'assets/img/carousel/modal.jpg';
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
 import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage";
@@ -24,11 +25,23 @@ function Transition(props) {
 
 class CarouselModal extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
+        this.state = {
+            language: this.props.language
+        }
     }
 
     componentDidMount() {
         //this.props.fetchProduct(this.props.uid);
+    }
+
+    componentWillReceiveProps(nextProps, nextContent) {
+        if (nextProps.language !== this.props.language) {
+            this.setState({
+                language: nextProps.language
+            })
+        }
     }
 
     render() {
@@ -65,7 +78,11 @@ class CarouselModal extends React.Component {
                     </DialogTitle>
                     <DialogContent className={classes.dialogContent}>
                         <DialogContentText>
-                            <img src={modalImg} alt="missing img"/>
+                            {this.state.language === 'cn' ?
+                                <img src={modalImgCN} alt="missing img" style={{width: "100%"}}/>
+                                :
+                                <img src={modalImgDE} alt="missing img" style={{width: "100%"}}/>
+                            }
                         </DialogContentText>
                     </DialogContent>
                 </Dialog>
@@ -74,7 +91,9 @@ class CarouselModal extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => ({});
+const mapStateToProps = (state, props) => ({
+    language: state.Language.language,
+});
 
 const mapDispatchToProps = dispatch => ({});
 

@@ -1,7 +1,7 @@
 const productModalStyle = {
     paper: {
-        marginLeft: '8px',
-        marginRight: '8px'
+        marginLeft: 8,
+        marginRight: 8,
     },
     modalHeader: {
         borderBottom: "none",

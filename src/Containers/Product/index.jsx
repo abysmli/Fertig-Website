@@ -101,19 +101,22 @@ class Product extends React.Component {
                     </GridItem>
                     <GridItem xs={12} className={classes.itemWrapper}>
                         <GridContainer className={classes.table}>
-                            <GridItem xs={2}
+                            <GridItem xs={6} sm={2}
                                       className={classes.tableCell}>{t('product.parameters.productName')}</GridItem>
-                            <GridItem xs={4} className={classes.tableCell}>{productName}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.pack')}</GridItem>
-                            <GridItem xs={4}
-                                      className={classes.tableCell}>{`${pack.weight}${pack.count ? (pack.count) : ''}`}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.origin')}</GridItem>
-                            <GridItem xs={4} className={classes.tableCell}>{origin}</GridItem>
-                            <GridItem xs={2} className={classes.tableCell}>{t('product.parameters.validity')}</GridItem>
-                            <GridItem xs={4} className={classes.tableCell}>{validity}</GridItem>
-                            <GridItem xs={2}
+                            <GridItem xs={6} sm={4} className={classes.tableCell}>{productName}</GridItem>
+                            <GridItem xs={6} sm={2}
+                                      className={classes.tableCell}>{t('product.parameters.pack')}</GridItem>
+                            <GridItem xs={6} sm={4}
+                                      className={classes.tableCell}>{`${pack.weight} ${pack.count ? (pack.count) : ''}`}</GridItem>
+                            <GridItem xs={6} sm={2}
+                                      className={classes.tableCell}>{t('product.parameters.origin')}</GridItem>
+                            <GridItem xs={6} sm={4} className={classes.tableCell}>{origin}</GridItem>
+                            <GridItem xs={6} sm={2}
+                                      className={classes.tableCell}>{t('product.parameters.validity')}</GridItem>
+                            <GridItem xs={6} sm={4} className={classes.tableCell}>{validity}</GridItem>
+                            <GridItem xs={6} sm={2}
                                       className={classes.tableCell}>{t('product.parameters.ingredient')}</GridItem>
-                            <GridItem xs={10} className={classes.tableCell}>{mixtureNames}</GridItem>
+                            <GridItem xs={6} sm={10} className={classes.tableCell}>{mixtureNames}</GridItem>
                         </GridContainer>
                     </GridItem>
                 </GridContainer>
