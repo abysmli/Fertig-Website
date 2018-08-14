@@ -1,7 +1,9 @@
 /*eslint-disable*/
 import React from "react";
 import i18n from 'i18next';
+import {connect} from 'react-redux';
 import {translate} from 'react-i18next';
+import {compose} from 'recompose';
 // react components for routing our app without refresh
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -14,6 +16,8 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import 'flag-icon-css/css/flag-icon.min.css';
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";
+
+import * as LanguageActions from "../../Reducers/Language/Actions";
 
 class HeaderRightLinks extends React.Component {
     constructor(props) {
@@ -37,6 +41,8 @@ class HeaderRightLinks extends React.Component {
         if (language === 'cn') {
             i18n.init({fallbackLng: 'zh_CN'});
         }
+
+        this.props.setLanguage(language);
 
         this.setState({
             selectedLanguage: language,
@@ -106,4 +112,14 @@ class HeaderRightLinks extends React.Component {
     }
 }
 
-export default translate('common')(withStyles(headerLinksStyle)(HeaderRightLinks));
+const mapStateToProps = (state, props) => ({});
+
+const mapDispatchToProps = dispatch => ({
+    setLanguage: (lang) => dispatch(LanguageActions.setLanguage(lang))
+});
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    translate('common'),
+    withStyles(headerLinksStyle),
+)(HeaderRightLinks);

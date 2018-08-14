@@ -26,7 +26,7 @@ class SectionCarousel extends React.Component {
             isModalOpen: false
         };
 
-        this.props.fetchCarousel();
+        this.props.fetchCarousel(this.props.language);
         this.toggleModal = this.toggleModal.bind(this);
     }
 
@@ -34,6 +34,12 @@ class SectionCarousel extends React.Component {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         })
+    }
+
+    componentWillReceiveProps(nextProps, nextContent) {
+        if (nextProps.language !== this.props.language) {
+            this.props.fetchCarousel(nextProps.language);
+        }
     }
 
     renderCarousels() {
@@ -117,12 +123,13 @@ class SectionCarousel extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
+    language: state.Language.language,
     showCarouselLoader: state.Loaders.showCarouselLoader,
     carousels: state.Products.carousels
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchCarousel: () => dispatch(ProductsActions.fetchCarousel())
+    fetchCarousel: (lang) => dispatch(ProductsActions.fetchCarousel(lang))
 });
 
 export default compose(

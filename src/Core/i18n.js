@@ -3,8 +3,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translations from 'Translations';
 
+const defaultLang = window.navigator.language === 'zh-CN' ? 'zh_CN' : 'de_DE';
+
 i18n.use(LanguageDetector).init({
-    fallbackLng: 'de_DE',
+    fallbackLng: defaultLang,
     debug: false,
 
     resources: translations,

@@ -34,7 +34,13 @@ class LandingPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.props.fetchProductSection();
+        this.props.fetchProductSection(this.props.language);
+    }
+
+    componentWillReceiveProps(nextProps, nextContent) {
+        if (nextProps.language !== this.props.language) {
+            this.props.fetchProductSection(nextProps.language);
+        }
     }
 
     renderProductSections() {
@@ -89,12 +95,13 @@ class LandingPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
+    language: state.Language.language,
     showProductSectionLoader: state.Loaders.showProductSectionLoader,
     productSections: state.Products.productSections
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchProductSection: () => dispatch(ProductsActions.fetchProductSection())
+    fetchProductSection: (lang) => dispatch(ProductsActions.fetchProductSection(lang))
 });
 
 export default compose(
@@ -105,6 +112,7 @@ export default compose(
 )(LandingPage);
 
 LandingPage.propTypes = {
+    language: PropTypes.string,
     fetchProductSection: PropTypes.func,
     productSections: PropTypes.array
 };
